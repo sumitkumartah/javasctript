@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+
+</body>
+
+<script>
+    function addLanguage(Language){
+        //create a list
+        const li=document.createElement("li")
+        //add text into the list
+        li.innerHTML=`${Language}`
+        //select the ul and within his child insert the li
+        document.querySelector(".language").appendChild(li)
+    }
+
+    addLanguage("python")
+    addLanguage("Java")
+
+
+
+    //optimize approach
+    function addOptiLanguage(Lang){
+        //create a list
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(Lang))
+        document.querySelector(".language").appendChild(li)
+    }
+   addOptiLanguage("TypeScript")
+   addOptiLanguage("GoLang")
+
+
+   //replace
+   const secondlang= document.querySelector("li:nth-child(2)")
+   //secondlang.innerHTML="mojo"
+
+   const newLi=document.createElement('li')
+   newLi.textContent="Mojo"
+   secondlang.replaceWith(newLi)
+
+   //another method of replace
+   const Firstlang= document.querySelector("li:first-child")
+   Firstlang.outerHTML='<li>Sumit</li>'
+
+   //remove
+   const lastLang=document.querySelector("li:last-child")
+   lastLang.remove()
+
+
+</script>
+
+</html>

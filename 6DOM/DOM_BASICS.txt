@@ -1,0 +1,253 @@
+
+
+////////1st.html is the linkkkkk
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+
+    <div >
+        <h1 id="title" class="heading">DOM learning makes easier <span style="display: none;">text text</span> </h1>
+        <h2>hi</h2>
+        <h2>hello</h2>
+        <h2>bye</h2>
+
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi pariatur molestiae ducimus, unde dolorem quis deleniti laboriosam neque expedita debitis!</p>
+        
+
+        <ul>
+             <li class="item">One</li>
+             <li class="item">Two</li>
+             <li class="item">Three</li>
+        </ul>
+
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+//to see the whole structure of the page
+document
+
+
+//select the whole tag whlch id='title
+
+document.getElementById('title')
+output:  <h1 id="title" class="heading">…</h1>
+
+
+
+document.getElementById('title').id
+'title'
+
+
+document.getElementById('title').class
+undefined
+
+
+document.getElementById('title').className
+'heading'
+
+
+document.getElementById('title').getAttribute('class')
+'heading'
+
+//change the class name as test
+document.getElementById('title').setAttribute('class', 'test')
+undefined
+
+//change the class name as- test heading
+document.getElementById('title').setAttribute('class', 'test heading')
+undefined
+
+
+
+//store the value into a variable
+const title = document.getElementById('title')
+undefined
+
+
+
+
+
+
+//Add style in title
+title.style.backgroundColor='green'  (change the id=title content color green)
+
+title.style.padding='15px'(add padding 15px)
+
+
+
+
+
+
+//Acess the content in different way
+
+title.textContent      (show all the texts even if it's hidden due to any CSS property) 
+'DOM learning makes easier text text '
+
+
+title.innerText        (it will only show what is visible on the page)
+'DOM learning makes easier'  
+
+
+title.innerHTML      (show all the text including the tags )
+'DOM learning makes easier <span style="display: none;">text text</span> '
+
+Difference between innerText and textContent: 
+innerText will only show what is visible on the page. 
+textContent will show all the texts even if it's hidden due to any CSS property being applied to the text.
+
+
+
+
+
+
+
+
+QUERY SELECTOR
+
+document.querySelector('h2')      //select the first h2 tag
+<h2>hi</h2>
+
+document.querySelector('#title') //select the whole tag which id="title"
+
+<h1 id="title" class="test heading" style="background-color: green; padding: 15px;">DOM learning makes easier <span style="display: none;">text text</span> </h1>
+
+
+
+document.querySelector('.heading')  //select the whole tag which class="heading"
+
+<h1 id="title" class="test heading" style="background-color: green; padding: 15px;">DOM learning makes easier <span style="display: none;">text text</span> </h1>
+
+
+
+document.querySelector(input[type=`password`]) //acess the password input
+
+
+
+
+
+
+
+CHANGE THE FIRST LIST COLOR
+
+document.querySelector(`ul`)  //select the ul
+<ul>...</ul>
+
+const myul= document.querySelector(`ul`)  //store the ul within a variable
+
+
+const myli= myul.querySelector(`li`) //select  li from ul
+
+
+myli.style.backgroundColor="green"   //change the first list background color
+
+myli.innerText="fiveeeeeeeee" //change the first list name as - fiveeeeeeeeeeee
+
+
+
+
+
+
+
+
+
+
+
+QUERY SELECTOR ALL
+
+
+document.querySelectorAll("li")   
+
+NodeList(3) [li.item, li.item, li.item]
+0: li.item
+1: li.item
+2: li.item
+length:3
+[[Prototype]]
+: 
+NodeList
+
+//as it is a node list it act like array but all the methods like map will not acess here
+
+
+const templist= document.querySelectorAll("li")  //store in a variable
+
+templist.style.coloe="green"  //give error as it it act like array
+
+templist[1].style.color="blue" //change the text color
+
+templist.forEach( function(l) {  l.style.backgroundColor = "yellow"; });  //change the background color to yellow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACESSS BY THE CLASSNAME
+
+document.getElementsByClassName('item')   //it return html collection
+
+HTMLCollection(3) [li.item, li.item, li.item]
+0: li.item
+1: li.item
+2: li.item
+length: 3
+[[Prototype]]: HTMLCollection
+
+
+
+//CONVERT THE HTML COLLECTION TO A ARRAY
+
+const templistclass= document.getElementsByClassName('item')  //store in a variable
+
+Array.from(templistclass)   //convert into array
+
+(3) [li.item, li.item, li.item]
+0: li.item
+1: li.item
+2: li.item
+length: 3
+[[Prototype]]: Array(0)
+
+
+const myArr= Array.from(templistclass) //store in a variable
+myArr.forEach( function(li) { li.style.color="red"});  //for each loop
+
+
+
+

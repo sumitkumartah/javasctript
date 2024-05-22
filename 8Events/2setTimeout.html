@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyne</title>
+</head>
+
+<body>
+
+    <h1>Chai aur code</h1>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+
+    //  setTimeout( function(){
+    //     console.log("Sumit");
+    //  }, 2000)
+
+
+
+   
+   
+    //after 2 sec sumit will print in console
+    // const saySumit=function(){
+    //     console.log("Sumit");
+    // }
+    // setTimeout(saySumit, 2000);
+
+
+
+     //change the h1 name after 2 sec
+     const changeText= function() {
+        document.querySelector('h1').innerHTML="Best JS series ever"
+    }
+    // setTimeout( changeText, 2000)
+ 
+
+
+
+    //stop the setTimeout
+    // step 1: take a variable in the setTimeout
+    const changeMe= setTimeout( changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+
+
+
+
+</script>
+
+</html>

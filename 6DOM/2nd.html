@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+   <div class="parent" >
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">wednesday</div>
+     </div> 
+
+</body>
+<script>
+    const parent= document.querySelector('.parent');
+    // console.log(parent) 
+    // //output- div class="parent" >...</div>
+
+    // console.log(parent.children);
+    // //HTMLCollection(4) [div.day, div.day, div.day, div.day]
+
+    // console.log(parent.children[1]);
+    // // <div class="day">Monday</div>
+
+    // console.log(parent.children[1].innerText);
+    // //Monday
+
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //    console.log(parent.children[i].innerHTML)
+    // }
+    /*
+    Sunday
+    Monday
+    Tuesday
+    wednesday
+    */
+
+
+   parent.children[1].style.color="orange"
+   //change monday colour to orange
+
+
+   console.log(parent.firstElementChild);
+   //<div class="day">Sunday</div>
+
+   console.log(parent.lastElementChild);
+   //<div class="day">wednesday</div>
+
+
+   const day1=document.querySelector('.day')
+   console.log(day1);
+  // <div class="day">Sunday</div>
+
+   
+   console.log(day1.parentElement) //acess the parent and all the properties of parent
+   // <div class="parent">...</div>
+  
+   console.log(day1.nextElementSibling) 
+// <div class="day" style="color: orange;">Monday</div>
+
+ 
+console.log("NODES= ", parent.childNodes)
+// NODES=  NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+
+
+
+
+</script>
+</html>

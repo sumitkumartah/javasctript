@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyne</title>
+</head>
+
+<body>
+
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+
+<script>
+   //by using setInterval after a particular ti,e same thing will exexute again and again
+//    setInterval( function(){
+//     console.log("Sumit", Date.now());
+//    },1000)
+
+
+
+const sayDate= function(str){
+    console.log(str, Date.now());
+}
+// setInterval(sayDate, 2000, "hi")
+
+
+
+
+
+//clearInterval() to stop this setInterval()
+const intervalId=setInterval(sayDate, 2000, "hi")
+clearInterval(intervalId)
+
+
+
+
+</script>
+
+</html>
